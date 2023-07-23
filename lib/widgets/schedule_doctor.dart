@@ -13,7 +13,7 @@ class ScheduleDoctor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      padding: const EdgeInsets.only(left: 30, top: 30, right: 30, bottom: 0),
+      padding: const EdgeInsets.only(left: 10, top: 30, right: 10, bottom: 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: const Color(0xFFade8f4).withOpacity(0.6),
@@ -35,7 +35,7 @@ class ScheduleDoctor extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: 20,
+                width: 10,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,14 +53,14 @@ class ScheduleDoctor extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 height: 30,
-                width: 240,
+                width: 255,
                 padding: const EdgeInsets.fromLTRB(20, 2, 20, 2),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -99,12 +99,12 @@ class ScheduleDoctor extends StatelessWidget {
             ],
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(10, 15, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 15, 0, 0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 112.5,
+                  width: 120,
                   height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -119,9 +119,9 @@ class ScheduleDoctor extends StatelessWidget {
                     style: TextStyle(color: Color(0xFF1560BD)),
                   )),
                 ),
-                const SizedBox(width: 15),
+                const SizedBox(width: 20),
                 Container(
-                  width: 112.5,
+                  width: 120,
                   height: 30,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),

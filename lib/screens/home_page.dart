@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                   'How are you feeling today?',
                   style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w200,
                   ),
                 ),
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 height: 160,
                 padding: const EdgeInsets.only(
-                    left: 30, top: 30, right: 30, bottom: 20),
+                    left: 15, top: 30, right: 15, bottom: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: const Color(0xFF086375),
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                             'Today',
                             style: TextStyle(color: Colors.white),
                           ),
-                          SizedBox(width: 60),
+                          SizedBox(width: 30),
                           Icon(
                             Ionicons.time_outline,
                             color: Colors.white,
