@@ -3,7 +3,7 @@ import 'package:health_app/widgets/health_needs_widget.dart';
 List<HealthNeedsCircularWidget> homeScreenListItems = [
   const HealthNeedsCircularWidget(
     imageUrl: 'appointment.png',
-    imageDesc: 'Appointment',
+    imageDesc: 'Consult',
   ),
   const HealthNeedsCircularWidget(
     imageUrl: 'hospital.png',
@@ -22,7 +22,7 @@ List<HealthNeedsCircularWidget> homeScreenListItems = [
 List<HealthNeedsCircularWidget> healthListItems = [
   const HealthNeedsCircularWidget(
     imageUrl: 'appointment.png',
-    imageDesc: 'Appointment',
+    imageDesc: 'Consult',
   ),
   const HealthNeedsCircularWidget(
     imageUrl: 'hospital.png',

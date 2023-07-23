@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/sections/health_needs.dart';
+import 'package:health_app/sections/navigation_bar.dart';
 import 'package:health_app/sections/nearby_doctors_section.dart';
 import 'package:health_app/utils/needs_list.dart';
 import 'package:health_app/widgets/headline_text.dart';
@@ -13,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int index = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                             image: const DecorationImage(
                               image: AssetImage('assets/doctor_2.jpg'),
                               fit: BoxFit.cover,
+                              alignment: Alignment.topCenter,
                             ),
                           ),
                         ),
@@ -181,53 +181,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        currentIndex: index,
-        onTap: (int index) {
-          setState(() {
-            this.index = index;
-          });
-        },
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color(0xFF1d3557),
-        elevation: 0,
-        iconSize: 26,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Ionicons.home_outline,
-                color: Colors.grey,
-              ),
-              label: "Home",
-              activeIcon: Icon(Ionicons.home)),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Ionicons.calendar_outline,
-              color: Colors.grey,
-            ),
-            label: 'Calendar',
-            activeIcon: Icon(Ionicons.calendar),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Ionicons.chatbubble_ellipses_outline,
-              color: Colors.grey,
-            ),
-            label: 'Chat',
-            activeIcon: Icon(Ionicons.chatbubble_ellipses),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Ionicons.person_outline,
-              color: Colors.grey,
-            ),
-            label: 'My Profile',
-            activeIcon: Icon(Ionicons.person),
-          ),
-        ],
-      ),
+      bottomNavigationBar: NavigationBar1(index: 0),
     );
   }
 }
