@@ -56,3 +56,27 @@ List<HealthNeedsCircularWidget> specialNeedsListItems = [
     imageDesc: 'Bill',
   ),
 ];
+
+List<Map<String, dynamic>> doctorsID = [
+  {
+    'name': 'Dr. Skylar Korsgaard',
+    'profession': 'Neurologist',
+    'ratings': 4.2,
+    'reviews': 208,
+    'imageURL': 'doctor_3.jpg',
+  },
+  {
+    'name': 'Dr. Ruben Vargas',
+    'profession': 'Psychiatrist',
+    'ratings': 4.7,
+    'reviews': 162,
+    'imageURL': 'doctor_2.jpg',
+  },
+  {
+    'name': 'Dr. Vinay Pratap',
+    'profession': 'Psychiatrist',
+    'ratings': 4.1,
+    'reviews': 312,
+    'imageURL': 'doctor_1.jpg',
+  },
+];
