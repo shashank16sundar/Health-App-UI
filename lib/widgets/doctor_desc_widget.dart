@@ -35,7 +35,7 @@ class DoctorDescription extends StatelessWidget {
         ),
         const SizedBox(width: 15),
         SizedBox(
-          height: 100,
+          height: 105,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +44,7 @@ class DoctorDescription extends StatelessWidget {
                 name,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 17,
                 ),
               ),
               const SizedBox(

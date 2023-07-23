@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/sections/health_needs.dart';
 import 'package:health_app/sections/nearby_doctors_section.dart';
+import 'package:health_app/utils/needs_list.dart';
 import 'package:health_app/widgets/headline_text.dart';
 import 'package:ionicons/ionicons.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +173,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            const HealthNeeds(),
+            HealthNeeds(
+              displayList: homeScreenListItems,
+            ),
             const SizedBox(height: 20),
             const NearbyDoctors(),
           ],
@@ -174,7 +184,12 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        currentIndex: 0,
+        currentIndex: index,
+        onTap: (int index) {
+          setState(() {
+            this.index = index;
+          });
+        },
         type: BottomNavigationBarType.fixed,
         selectedItemColor: const Color(0xFF1d3557),
         elevation: 0,

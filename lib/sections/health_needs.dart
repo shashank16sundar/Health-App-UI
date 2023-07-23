@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/widgets/health_needs_widget.dart';
 
-class HealthNeeds extends StatelessWidget {
-  const HealthNeeds({super.key});
+class HealthNeeds extends StatefulWidget {
+  final List<HealthNeedsCircularWidget> displayList;
+  final bool? title;
+  const HealthNeeds({super.key, required this.displayList, this.title});
 
+  @override
+  State<HealthNeeds> createState() => _HealthNeedsState();
+}
+
+class _HealthNeedsState extends State<HealthNeeds> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,39 +18,34 @@ class HealthNeeds extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.only(left: 5),
-          child: const Text(
-            'Health Needs',
-            style: TextStyle(
-              fontSize: 25,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child: widget.title == null
+              ? const Text(
+                  'Health Needs',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              : const Text(
+                  'Specialised Care',
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
         ),
         const SizedBox(height: 10),
         Container(
           height: 100,
           padding: const EdgeInsets.symmetric(horizontal: 2),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              HealthNeedsCircularWidget(
-                imageUrl: 'appointment.png',
-                imageDesc: 'Appointment',
-              ),
-              HealthNeedsCircularWidget(
-                imageUrl: 'hospital.png',
-                imageDesc: 'Hospital',
-              ),
-              HealthNeedsCircularWidget(
-                imageUrl: 'virus.png',
-                imageDesc: 'Covid-19',
-              ),
-              HealthNeedsCircularWidget(
-                imageUrl: 'more.png',
-                imageDesc: 'More',
-              ),
-            ],
+            children: widget.displayList
+                .map((e) => HealthNeedsCircularWidget(
+                    imageUrl: e.imageUrl, imageDesc: e.imageDesc))
+                .toList(),
           ),
         ),
       ],
