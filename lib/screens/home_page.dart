@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/sections/health_needs.dart';
+import 'package:health_app/sections/nearby_doctors_section.dart';
+import 'package:health_app/widgets/headline_text.dart';
 import 'package:ionicons/ionicons.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,23 +15,20 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Container(
-          margin: const EdgeInsets.only(left: 10),
+          margin: const EdgeInsets.only(left: 5),
           child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Hi David',
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
-              ),
-              Text(
-                'How are you feeling today?',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w200,
+              HeadlineText(headline: 'Hi David'),
+              Padding(
+                padding: EdgeInsets.only(left: 5.0),
+                child: Text(
+                  'How are you feeling today?',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w200,
+                  ),
                 ),
               ),
             ],
@@ -128,7 +128,7 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(20, 2, 20, 2),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color(0xFF3c1642).withOpacity(0.8),
+                        color: const Color(0xFF3c1642).withOpacity(0.9),
                         boxShadow: const [
                           BoxShadow(blurRadius: 1.0, spreadRadius: 0.2),
                         ],
@@ -164,8 +164,54 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 30),
+            const HealthNeeds(),
+            const SizedBox(height: 20),
+            const NearbyDoctors(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        currentIndex: 0,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: const Color(0xFF1d3557),
+        elevation: 0,
+        iconSize: 26,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Ionicons.home_outline,
+                color: Colors.grey,
+              ),
+              label: "Home",
+              activeIcon: Icon(Ionicons.home)),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Ionicons.calendar_outline,
+              color: Colors.grey,
+            ),
+            label: 'Calendar',
+            activeIcon: Icon(Ionicons.calendar),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Ionicons.chatbubble_ellipses_outline,
+              color: Colors.grey,
+            ),
+            label: 'Chat',
+            activeIcon: Icon(Ionicons.chatbubble_ellipses),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Ionicons.person_outline,
+              color: Colors.grey,
+            ),
+            label: 'My Profile',
+            activeIcon: Icon(Ionicons.person),
+          ),
+        ],
       ),
     );
   }
